@@ -1,6 +1,10 @@
 # handlers/commands.py
 from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram.types import (
+    Message,
+    InlineKeyboardMarkup,
+    InlineKeyboardButton
+)
 from config import ADMIN_IDS
 from db.mongo import count_words
 
@@ -9,7 +13,18 @@ learning_enabled = True
 def register_command_handlers(app):
     @app.on_message(filters.command("start"))
     async def start(client, message: Message):
-        await message.reply("Hello! I'm a learning bot. Reply to my messages and I'll remember your response!")
+        keyboard = InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("RU_DRA_65", url="https://t.me/RU_DRA_65")],
+                [InlineKeyboardButton("Join Group", url="https://t.me/RU_DRA_098")]  # replace this
+            ]
+        )
+
+        await message.reply_photo(
+            photo="https://te.legra.ph/file/91d987d3fffa97ffb42f5.jpg",  # replace with your image URL
+            caption="**Hey! I'm a learning bot.**\n\nReply to my messages and I’ll remember your responses!",
+            reply_markup=keyboard
+        )
 
     @app.on_message(filters.command("help"))
     async def help_cmd(client, message: Message):
