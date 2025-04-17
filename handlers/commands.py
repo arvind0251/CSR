@@ -21,7 +21,7 @@ def register_command_handlers(app):
         )
 
         await message.reply_photo(
-            photo="https://te.legra.ph/file/91d987d3fffa97ffb42f5.jpg",  # replace with your image URL
+            photo="https://files.catbox.moe/xniwk3.jpg",  # replace with your image URL
             caption="**Hey! I'm a learning bot.**\n\nReply to my messages and I’ll remember your responses!",
             reply_markup=keyboard
         )
