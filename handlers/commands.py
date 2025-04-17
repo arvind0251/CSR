@@ -15,7 +15,7 @@ def register_command_handlers(app):
     async def start(client, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("RU_DRA_65", url="https://t.me/RU_DRA_65")],
+                [InlineKeyboardButton("Rudra", url="https://t.me/RU_DRA_65")],
                 [InlineKeyboardButton("Join Group", url="https://t.me/RU_DRA_098")]  # replace this
             ]
         )
