@@ -1,4 +1,3 @@
-# handlers/message_handler.py
 import random
 from pyrogram import filters
 from pyrogram.enums import ChatAction
@@ -8,7 +7,7 @@ from utils.filters import is_clean_text
 from handlers.commands import learning_enabled
 
 def register_message_handler(app):
-    @app.on_message(filters.text & ~filters.bot)
+    @app.on_message(filters.text & filters.incoming & ~filters.service)
     async def handle_messages(client, message: Message):
         if not is_clean_text(message.text):
             return
